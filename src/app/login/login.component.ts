@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import {  FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import {MatDialogModule} from '@angular/material/dialog';
 @Component({
@@ -11,10 +11,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
-
   username: string;
   password: string;
   showSpinner:Boolean = false;
