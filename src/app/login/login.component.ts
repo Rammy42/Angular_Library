@@ -1,8 +1,9 @@
+import { UsersService } from './users.service';
 import { Component, OnInit } from '@angular/core';
 import {  FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import {MatDialogModule} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   showSpinner:Boolean = false;
-  constructor(private router: Router) {
+  constructor(private router: Router,private uerService : UsersService) {
       // redirect to home if already logged in
      
   }
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   login() : void {
     this.showSpinner=true;
     if(this.username == 'admin' && this.password == 'admin'){
+      this.uerService.setLogedInUser(this.username)
      this.router.navigate(["dpt"]);
     }else {
       alert("Invalid credentials");
