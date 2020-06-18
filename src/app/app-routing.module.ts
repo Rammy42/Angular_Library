@@ -1,7 +1,8 @@
+import { PersonComponent } from './person/person.component';
 import { LoginComponent } from './login/login.component';
 import { EmpComponent } from './emp/emp.component';
 import { DptComponent } from './dpt/dpt.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
@@ -14,6 +15,9 @@ const routes: Routes = [
 },
 {
   path:"login",component:LoginComponent
+},
+{
+  path : "persons", component:PersonComponent
 }
 ];
 
@@ -22,4 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [EmpComponent,DptComponent,LoginComponent]
+export const routingComponents = [EmpComponent,DptComponent,LoginComponent,PersonComponent]

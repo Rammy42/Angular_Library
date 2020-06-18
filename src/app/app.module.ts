@@ -5,12 +5,14 @@ import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CustomMaterialModule } from './core/material.module';
-
+import { HttpClientModule }    from '@angular/common/http';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [ 
     AppComponent,
     routingComponents,
+    PersonComponent,
     
   ],
   imports: [
@@ -18,7 +20,8 @@ import { CustomMaterialModule } from './core/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
